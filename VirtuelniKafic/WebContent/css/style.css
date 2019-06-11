@@ -4,5 +4,40 @@ h1{
 color:pink	
 }
 
+.bojiSlovaUplavo{
+	color:#d11aff;
+	
+	
+}
 
+#formaRegistracje{
+	
+	width:200px;
+	height:300px;
+	border: 2px solid blue;
+	background-color:pink;
+	text-align:center;
+	padding-top:10%;
+	border-radius:15px;
+}
+
+#formaRegistracje input{
+	
+	width:80%;
+	height:10%;
+	border-radius:15px;
+}
+
+#formaRegistracje input[type="submit"]{
+	
+	width:80%;
+	height:20%;
+	border-radius:15px;
+	font-size:14px;
+	font-weight:bold;
+}
+#formaRegistracje input[type="submit"]:hover {
+	
+	background-color:#b3ffff;
+}
 
