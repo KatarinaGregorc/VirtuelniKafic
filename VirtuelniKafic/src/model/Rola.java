@@ -1,7 +1,12 @@
 package model;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Rola {
-     private int idRola;
+	
+	
+    
 	private String uloga;
 
 	public String getUloga() {
@@ -12,13 +17,7 @@ public class Rola {
 		this.uloga = uloga;
 	}
 
-	public int getIdRola() {
-		return idRola;
-	}
-
-	public void setIdRola(int idRola) {
-		this.idRola = idRola;
-	}
+	
 	
 	
 }
