@@ -87,6 +87,44 @@ public class logInDao {
 		}
 		return vrati;
 		}
+   
+   public User vratiUsera(String userName) {
+	   
+	   User user=new User();
+	   
+	   Session session=sf.openSession();
+	    
+	    try {
+	 		String upit="FROM User where userName = :korisnickoIme";
+	 		Query query = session.createQuery(upit);
+	 		
+	       query.setParameter("korisnickoIme",userName );
+	       
+	       List<User>ListaUsera=query.getResultList();
+	       user=ListaUsera.get(0);
+	       
+	       return  user;
+	 		
+	 	
+	       
+	    } catch (Exception e) {
+	 	  session.getTransaction().rollback();
+	 	 
+	 	  return null;
+	 	}finally {
+	 		
+	 		session.close();   
+	   
+	 	}
+	 	
+	    
+	   
+   }
+   
+ 
+
+	
+
    }
 
 

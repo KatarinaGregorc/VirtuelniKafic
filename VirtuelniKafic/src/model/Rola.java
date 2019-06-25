@@ -3,21 +3,17 @@ package model;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class Rola {
+public enum Rola {
 	
 	
+	ADMINISTRATOR,
+	KORISNIK;
     
-	private String uloga;
-
-	public String getUloga() {
-		return uloga;
+	 Rola() {
+		
 	}
+	
+	
+	
 
-	public void setUloga(String uloga) {
-		this.uloga = uloga;
-	}
-
-	
-	
-	
 }

@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.logInDao;
+import model.Rola;
+import model.User;
 
 /**
  * Servlet implementation class LoginServlet
@@ -44,9 +46,27 @@ public class LoginServlet extends HttpServlet {
 		
 		logInDao   logInDao = new logInDao();
 		
+		User user=new User();
+		
+		
 		boolean proveriUsera= logInDao.daLiPostojiUserUbazi(userName);
 		
 		if(proveriUsera) {
+			
+			boolean proveriPassword=logInDao.daLiPasswordOdgovaraUser(userName, password);
+			
+		if(proveriPassword) {
+	user=logInDao.vratiUsera(userName);
+		if(user.getRola().equals(Rola.ADMINISTRATOR));
+		
+	response.sendRedirect("view/administraror.jsp");
+	
+	
+		}else {
+			response.sendRedirect("view/user.jsp");
+		}	
+			
+			
 			//nastavi dalje
 		}else {
 			

@@ -29,14 +29,14 @@ public class RegistracijaDao {
 		user.setUserName(usrName);
 		user.setPassword(password);
 		
-	Rola rola=new Rola();
 	
+	Rola rola;
 	
 	if(ValidacijaZaRegistraciju.daLIJeAdmin(usrName, password)) {
+		rola=Rola.ADMINISTRATOR;
 		
-		rola.setUloga("administrator");
 	}else {
-		rola.setUloga("korisnik");
+		rola=Rola.KORISNIK;
 	}
 	   
 	    
